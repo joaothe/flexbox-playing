@@ -2,7 +2,7 @@
 <html>
 <body>
 
-  <section id="list">
+  <section id="content">
     <article class="item">01</article>
     <article class="item">02</article>
     <article class="item">03</article>
@@ -10,18 +10,41 @@
   </section>
 
   <style>
-    #list {
+    #content {
       background: goldenrod;
+      width: 500px;
       height: 500px;
+      display: flex;
+      /* elements inline.... flex-direction: row;*/
+      /* elements in a row reverse.... flex-direction: row-reverse;*/
+      /* elements one on top of the other, like list-column flex-direction: column; */
+      /* elements one on top of the other, but in an inverted other..... flex-direction: column-reverse */
+      /* break elements - original space.... flex-wrap: wrap; */
+      /* put elements in the end of the row, like float:right.... justify-content: flex-end; */
+      /* put elements in the start of the row, like float:left.... justify-content: flex-start; */
+      /* margin-right,left between elements.... justify-content: space-around; */
+      /* vertical align.... align-items: flex-start;  align-items: flex-end; align-items: center*/
+      /* align-items: strech; stretch child elements until the end of the column
+      align-items: baseline; flat the elements on the top*/
     }
 
     .item {
+      /* flex-grow, flex-shrink, flex-basis. All in one lone ---> flex: 0 1 auto; */
+      flex-grow: 0; /* take the rest of div's width */
+      flex-shrink: 0; /* shrink the div */
+      flex-basis: 58px; /* define a width of each element in case of it does not exists */
+      width: 250px;
       height: 100px;
       width: 100px;
       color: blue;
       background-color: white;
       margin: 5px;
     }
+
+    .item:nth-child(1) {
+      flex-grow: 1;
+    }
+
   </style>
 
 </body>
